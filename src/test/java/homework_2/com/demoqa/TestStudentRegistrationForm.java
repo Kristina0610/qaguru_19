@@ -12,13 +12,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class TestStudentRegistrationForm extends TestBase {
   @Test
-
-  void successfulFillFormTest () {
+  void successfulFillFormTest() {
     open("/automation-practice-form");
 
     executeJavaScript("$('footer').remove()");
     executeJavaScript("$('header').remove()");
-    //executeJavaScript("document.querySelector(`body>div.pattern-backgound playgound-header`).remove()");
 
     $("#firstName").setValue("Elza");
     $("#lastName").setValue("Smite");
@@ -27,13 +25,12 @@ public class TestStudentRegistrationForm extends TestBase {
     $("#userNumber").setValue("9115645654");
     $("#dateOfBirthInput").click();
     $(".react-datepicker__month-container").$(".react-datepicker__month-select").click();
-    $(by("value","7")).click();
+    $(by("value", "7")).click();
     $(".react-datepicker__year-select").click();
-    $(by("value","2000")).click();
-    $(by("aria-label","Choose Friday, August 18th, 2000")).click();
+    $(by("value", "2000")).click();
+    $(by("aria-label", "Choose Friday, August 18th, 2000")).click();
     $("#hobbiesWrapper").$(byText("Sports")).click();
     $("#hobbiesWrapper").$(byText("Reading")).click();
-    //$("#subjectsInput").setValue("Mathematics").pressEnter();
     $("#subjectsInput").setValue("Mathematics");
     $("#uploadPicture").uploadFile(new File("src/test/resources/screenshot_1.png"));
     $("#currentAddress").setValue("London");
